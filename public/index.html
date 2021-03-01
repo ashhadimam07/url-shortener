@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Url Shortener</title>
+    <link rel="stylesheet" href="./static/styles/styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+</head>
+<body onload="displayURl()">
+    <header>
+        <a href="index.html" class="logo">URL SHORTENER</a>
+        <span class="menu-toggle"><i  class="fa" aria-hidden="true"></i></span>
+        <nav>
+            <ul>
+                <li><a href="https://utility-web-tools.netlify.app" target="_blank" class="active">Web Tools</a></li>
+            </ul>
+        </nav>
+        <div class="clearfix"></div>
+    </header>
+    <main>
+        <div class="align-content"> 
+            <div class="content">
+                <input type="text" class="input" autofocus  required spellcheck="false" placeholder="LONG URL">
+                <input type="text" class="output" readonly placeholder="SHORT URL">
+                <div class="btn-content">
+                    <button class="button-content">Shorten</button>
+                    <button class="button-content copy">Copy</button>
+                </div>
+            </div>
+            <div class="content content1">
+                <h2>URL SHORTENER DATABASE</h2>
+                <table id="table">
+                    <thead>
+                        <tr>
+                            <th>LONG URL</th>
+                            <th>SHORT URL</th>
+                          </tr>
+                    </thead>
+                    <tbody>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="footer-heading">URL SHORTENER</div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" 
+    crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('.menu-toggle').click(function() {
+                $('.menu-toggle').toggleClass('active')
+                $('nav').toggleClass('active')
+            })
+        })
+    </script>
+    <script src="./static/scripts/script.js"></script>
+</body>
+</html>
