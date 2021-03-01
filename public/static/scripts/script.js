@@ -36,8 +36,7 @@ function urlShortener() {
                     const copyText = document.querySelector('.output');
                     copyText.select();
                     document.execCommand('copy');
-                    // eslint-disable-next-line no-alert
-                    alert('Copied');
+                    copyUrl.textContent = 'Copied!!';
                 });
             });
     }
