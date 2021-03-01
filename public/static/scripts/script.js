@@ -3,17 +3,16 @@ const outputUrl = document.querySelector('.output');
 const shortenUrl = document.querySelector('.button-content');
 const copyUrl = document.querySelector('.copy');
 
-function validURL(myURL) {
-    const pattern = new RegExp(
-        '^(https?:\\/\\/)?' +
-            '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.?)+[a-z]{2,}|' +
-            '((\\d{1,3}\\.){3}\\d{1,3}))' +
-            '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*' +
-            '(\\?[;&a-z\\d%_.~+=-]*)?' +
-            '(\\#[-a-z\\d_]*)?$',
-        'i',
-    );
-    return pattern.test(myURL);
+function isValidHttpUrl(string) {
+    let url;
+
+    try {
+        url = new URL(string);
+    } catch (_) {
+        return false;
+    }
+
+    return url.protocol === 'http:' || url.protocol === 'https:';
 }
 
 function urlShortener() {
@@ -45,7 +44,7 @@ function urlShortener() {
 }
 
 shortenUrl.addEventListener('click', () => {
-    if (validURL(inputUrl.value) === false) {
+    if (isValidHttpUrl(inputUrl.value) === false) {
         // eslint-disable-next-line no-alert
         alert('Enter Valid URL');
     } else {
