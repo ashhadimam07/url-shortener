@@ -98,6 +98,7 @@ nav ul li a:hover {
   justify-content: center;
   flex-direction: column;
   background-color: wheat;
+  height: 100%;
 }
 
 .content {
