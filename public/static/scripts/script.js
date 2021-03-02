@@ -15,6 +15,12 @@ function isValidHttpUrl(string) {
     return url.protocol === 'http:' || url.protocol === 'https:';
 }
 
+function changeButtonText() {
+    setTimeout(() => {
+        copyUrl.textContent = 'Copy';
+    }, 3000);
+}
+
 function urlShortener() {
     if (inputUrl.value === '') {
         // eslint-disable-next-line no-alert
@@ -36,7 +42,8 @@ function urlShortener() {
                     const copyText = document.querySelector('.output');
                     copyText.select();
                     document.execCommand('copy');
-                    copyUrl.textContent = 'Copied!!';
+                    copyUrl.textContent = 'Copied';
+                    changeButtonText();
                 });
             });
     }
